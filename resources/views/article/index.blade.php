@@ -5,7 +5,7 @@
   
 
   <hr>
-  <a href='#' style='color:black;'><div class="card w-75 m-4">
+  <a href='#' ><div class="card w-75 m-4">
     <div class="card-body">
       <h5 class="card-title">僕達のリメイク</h5>
       <hr>
