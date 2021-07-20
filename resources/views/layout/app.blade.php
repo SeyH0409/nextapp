@@ -9,17 +9,22 @@
   <script src="{{ asset('js/app.js') }}"></script>
   <style>
     body {background-color: #CCFFFF; }
+    a {color: black;}
     a:hover {text-decoration: none;}
   </style>
 </head>
 <body>
   <nav class="navbar navbar-light bg-light  justify-content-around">
-    <span class="navbar-brand mb-0 h1  shadow-sm">アニトーク</span>
-    <button type="button" class="btn-dark">
-      <a href='#' style='color:white;'>
-        投稿
-      </a>
-    </button>
+    <span class="navbar-brand mb-0 h1 shadow-sm">
+      <a href="/">アニトーク</a>
+    </span>
+    @if (Request::is('/'))
+      <span class="navbar-brand mb-0 h1 shadow-sm">
+          <a href="{{ route('create') }}">
+            投稿
+          </a>
+      </span>
+    @endif
   </nav>
   @yield('content')
 </body>
