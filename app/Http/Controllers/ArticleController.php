@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
+use Session;
 
 
 class ArticleController extends Controller
@@ -16,6 +17,7 @@ class ArticleController extends Controller
             'articles' => $articles
         ]);
     }
+
     public function create()
     {
         return view('article.create');
@@ -28,5 +30,18 @@ class ArticleController extends Controller
         Article::create($inputs);
         
         return redirect()->route('index');
+    }
+
+    public function show($id)
+    {
+        $article = Article::find($id);
+        if (is_null($article)) 
+        {
+            \Session::flash('err_msg', 'nothing data');
+            return redirect(route('index'));
+        } else 
+        {
+            return view('article.show', ['article' => $article]);
+        }
     }
 }
