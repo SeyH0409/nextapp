@@ -14,6 +14,6 @@
         <label >本文</label>
         <textarea name="content" id="article-content" class='form-control' cols="30" rows="10"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary ">Submit</button>
+      <button type="submit" class="btn btn-primary ">投稿する</button>
     </form>
   @endsection
